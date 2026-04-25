@@ -1,0 +1,344 @@
+[gd_scene load_steps=18 format=3 uid="uid://c6egfvm65c5si"]
+
+[ext_resource type="Texture2D" uid="uid://cbreu7itcq13d" path="res://Scene Concept Practice Example.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://tnmrafrctwn6" path="res://Scene Concept Practice Chair.png" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="3_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://l4boe6sc7vms" path="res://icon.svg" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://dy36fu05e1dtc" path="res://npc.gd" id="5_7jktm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_feb5d"]
+size = Vector2(162.68584, 202.8993)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
+size = Vector2(138, 81.125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0e3"]
+size = Vector2(95, 81.21875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(157, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(1157, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(44, 520)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(1157, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
+size = Vector2(40, 497)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
+size = Vector2(410, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(379, 31)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc0e3"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
+radius = 23.75
+height = 48.0
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(-1, 0)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -171.0
+offset_top = -92.0
+offset_right = 1283.0
+offset_bottom = 771.0
+texture = ExtResource("1_80nbo")
+expand_mode = 1
+
+[node name="Chair 1" type="StaticBody2D" parent="."]
+position = Vector2(-6, -40)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 1"]
+position = Vector2(153.9375, 312)
+scale = Vector2(0.35039067, 0.2781945)
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 1"]
+visible = false
+position = Vector2(151.5, 311.5546)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 2" type="StaticBody2D" parent="."]
+position = Vector2(-7, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 2"]
+position = Vector2(153.375, 312.13516)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 2"]
+visible = false
+position = Vector2(153, 311.77725)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 3" type="StaticBody2D" parent="."]
+position = Vector2(199, -83)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 3"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 3"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 4" type="StaticBody2D" parent="."]
+position = Vector2(199, -43)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 4"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 4"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 5" type="StaticBody2D" parent="."]
+position = Vector2(835, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 5"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 5"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 6" type="StaticBody2D" parent="."]
+position = Vector2(663, -65)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 6"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 6"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 7" type="StaticBody2D" parent="."]
+position = Vector2(336, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 7"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 7"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 8" type="StaticBody2D" parent="."]
+position = Vector2(336, 103)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 8"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 8"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 9" type="StaticBody2D" parent="."]
+position = Vector2(337, 159)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 9"]
+position = Vector2(150, 355.00003)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 9"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 10" type="StaticBody2D" parent="."]
+position = Vector2(579, 58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 10"]
+position = Vector2(138, 359)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 10"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 11" type="StaticBody2D" parent="."]
+position = Vector2(579, 57)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 11"]
+position = Vector2(138, 359)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 11"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 12" type="StaticBody2D" parent="."]
+position = Vector2(579, 98)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 12"]
+position = Vector2(138, 359)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 12"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Chair 13" type="StaticBody2D" parent="."]
+position = Vector2(580, 154)
+
+[node name="Sprite2D" type="Sprite2D" parent="Chair 13"]
+position = Vector2(138, 359)
+scale = Vector2(0.34765628, 0.2781945)
+texture = ExtResource("2_e2o6t")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair 13"]
+visible = false
+position = Vector2(150, 355)
+scale = Vector2(0.3257813, 0.27819443)
+shape = SubResource("RectangleShape2D_feb5d")
+
+[node name="Table 1" type="StaticBody2D" parent="."]
+position = Vector2(3, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 1"]
+visible = false
+position = Vector2(248, 303.75)
+shape = SubResource("RectangleShape2D_e2o6t")
+
+[node name="Table 2" type="StaticBody2D" parent="."]
+position = Vector2(675, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 2"]
+visible = false
+position = Vector2(227.5, 303.39063)
+shape = SubResource("RectangleShape2D_fc0e3")
+
+[node name="Table 3" type="StaticBody2D" parent="."]
+position = Vector2(675, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 3"]
+visible = false
+position = Vector2(-70.5, 487)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="Back Wall" type="StaticBody2D" parent="."]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Wall"]
+visible = false
+position = Vector2(86.5, -128)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="Left Wall" type="StaticBody2D" parent="."]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall"]
+visible = false
+position = Vector2(-470, 196)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="."]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall"]
+visible = false
+position = Vector2(87.5, 441.5)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[node name="Right Wall" type="StaticBody2D" parent="."]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall"]
+visible = false
+position = Vector2(646, 179.5)
+shape = SubResource("RectangleShape2D_vef74")
+
+[node name="Waiting Area" type="StaticBody2D" parent="."]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waiting Area"]
+visible = false
+position = Vector2(-243, -30)
+shape = SubResource("RectangleShape2D_hve3p")
+
+[node name="Remaining Kicthen" type="StaticBody2D" parent="."]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Remaining Kicthen"]
+visible = false
+position = Vector2(438.5, -50.5)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(5, 6)
+script = ExtResource("3_fc0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(369, 436)
+scale = Vector2(0.3828125, 0.3828125)
+texture = ExtResource("3_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(369, 436)
+shape = SubResource("CapsuleShape2D_fc0e3")
+
+[node name="NPC" type="CharacterBody2D" parent="."]
+position = Vector2(-171, -92)
+input_pickable = true
+script = ExtResource("5_7jktm")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPC"]
+position = Vector2(590, 260)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("3_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC"]
+position = Vector2(590.25, 260)
+shape = SubResource("CapsuleShape2D_ryrav")
