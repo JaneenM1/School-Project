@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+@onready var prompt_label = $Label
+var player_in_range = false
+
 func _ready():
 	input_pickable = true
 
@@ -20,3 +23,22 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			Global_Var.grabbed_two = true
+
+
+# --- PROXIMITY ENTER ---
+func _on_area_2d_body_entered(body):
+	if body.name == "Player":
+		player_in_range = true
+		prompt_label.text = "Press E to interact"
+		prompt_label.visible = true
+
+
+# --- PROXIMITY EXIT ---
+func _on_area_2d_body_exited(body):
+	if body.name == "Player":
+		player_in_range = false
+		prompt_label.visible = false
+
+
+func show_order():
+	print("Order / dialogue triggered here")
