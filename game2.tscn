@@ -5,17 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://boo0k47jov1v7" path="res://icon.svg" id="3_cps6k"]
 [ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="4_8tca4"]
 [ext_resource type="Texture2D" uid="uid://cx30k7s0wipcp" path="res://sprites.png" id="5_boqrt"]
-[ext_resource type="Script" path="res://4_seat_table.gd" id="6_vfwdf"]
+[ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_vfwdf"]
 [ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://Scene Concept Practice Chair.png" id="7_v0n6i"]
 [ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="8_nuj7l"]
-[ext_resource type="Script" path="res://t1_chair_1.gd" id="9_7drl1"]
-[ext_resource type="Script" path="res://T1 Chair 2.gd" id="10_2wyxb"]
-[ext_resource type="Script" path="res://2_seat_table.gd" id="11_ugvmw"]
+[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://t1_chair_1.gd" id="9_7drl1"]
+[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://T1 Chair 2.gd" id="10_2wyxb"]
+[ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="11_ugvmw"]
 [ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="12_52qbx"]
-[ext_resource type="Script" path="res://t2_chair_1.gd" id="13_kw6pd"]
-[ext_resource type="Script" path="res://t3_chair_1.gd" id="14_jopgt"]
-[ext_resource type="Script" path="res://two_npcs.gd" id="15_601yx"]
+[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://t2_chair_1.gd" id="13_kw6pd"]
+[ext_resource type="Script" uid="uid://bxg7mf8erg3cs" path="res://t2_chair_2.gd" id="14_cps6k"]
+[ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="14_jopgt"]
+[ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="15_601yx"]
+[ext_resource type="Script" uid="uid://2t0afcuxa1ol" path="res://t3_chair_2.gd" id="16_8tca4"]
 [ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="16_qwl4e"]
+[ext_resource type="Script" uid="uid://b4xlkwp4ikbw3" path="res://kitchen.gd" id="17_xspbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
 size = Vector2(1157, 128)
@@ -160,6 +163,9 @@ size = Vector2(283, 165)
 radius = 92.30762
 height = 346.15405
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cps6k"]
+size = Vector2(379.5, 157)
+
 [node name="Node2D" type="Node2D" unique_id=1368253091]
 position = Vector2(51, 23)
 
@@ -243,7 +249,7 @@ shape = SubResource("CapsuleShape2D_fc0e3")
 script = SubResource("GDScript_7jktm")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326]
-position = Vector2(381, 352)
+position = Vector2(659, 166)
 script = ExtResource("4_8tca4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player" unique_id=670204784]
@@ -294,10 +300,10 @@ position = Vector2(851.5, 272)
 shape = SubResource("RectangleShape2D_iotsf")
 
 [node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
+visible = false
 script = ExtResource("12_52qbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
-visible = false
 position = Vector2(553.5, 454.5)
 shape = SubResource("RectangleShape2D_215e1")
 
@@ -308,12 +314,28 @@ sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 script = ExtResource("13_kw6pd")
 
+[node name="T2 Chair 2" type="AnimatedSprite2D" parent="." unique_id=1789256827]
+position = Vector2(937, 267.99997)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+flip_h = true
+script = ExtResource("14_cps6k")
+
 [node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
 position = Vector2(439, 395.99994)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 script = ExtResource("14_jopgt")
+
+[node name="T3 Chair 2" type="AnimatedSprite2D" parent="." unique_id=480537255]
+position = Vector2(668.00006, 393.99994)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+flip_h = true
+script = ExtResource("16_8tca4")
 
 [node name="Two NPCs" type="CharacterBody2D" parent="." unique_id=1635374078]
 position = Vector2(283, 142.99998)
@@ -336,9 +358,20 @@ position = Vector2(-3.846154, 3.846154)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_rvswv")
 
+[node name="Kitchen" type="Area2D" parent="." unique_id=385279870]
+position = Vector2(874, 67)
+script = ExtResource("17_xspbh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen" unique_id=1604175989]
+visible = false
+position = Vector2(4.25, -10)
+shape = SubResource("RectangleShape2D_cps6k")
+
 [connection signal="mouse_entered" from="Table 1" to="Table 1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Table 1" to="Table 1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Kitchen" to="Kitchen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Kitchen" to="Kitchen" method="_on_mouse_exited"]
