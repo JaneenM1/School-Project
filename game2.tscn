@@ -3,18 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://bqvl7rawajj51" path="res://Scene Concept Practice Example.png" id="1_v0n6i"]
 [ext_resource type="Script" uid="uid://s5b5utvdpfg7" path="res://NPC.gd" id="2_xspbh"]
 [ext_resource type="Texture2D" uid="uid://boo0k47jov1v7" path="res://icon.svg" id="3_cps6k"]
-[ext_resource type="Script" path="res://player.gd" id="4_8tca4"]
+[ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="4_8tca4"]
 [ext_resource type="Texture2D" uid="uid://cx30k7s0wipcp" path="res://sprites.png" id="5_boqrt"]
-[ext_resource type="Script" path="res://4_seat_table.gd" id="6_vfwdf"]
+[ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_vfwdf"]
 [ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://Scene Concept Practice Chair.png" id="7_v0n6i"]
 [ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="8_nuj7l"]
-[ext_resource type="Script" path="res://t1_chair_1.gd" id="9_7drl1"]
-[ext_resource type="Script" path="res://T1 Chair 2.gd" id="10_2wyxb"]
-[ext_resource type="Script" path="res://2_seat_table.gd" id="11_ugvmw"]
+[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://t1_chair_1.gd" id="9_7drl1"]
+[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://T1 Chair 2.gd" id="10_2wyxb"]
+[ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="11_ugvmw"]
 [ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="12_52qbx"]
-[ext_resource type="Script" path="res://t2_chair_1.gd" id="13_kw6pd"]
-[ext_resource type="Script" path="res://t3_chair_1.gd" id="14_jopgt"]
-[ext_resource type="Script" path="res://two_npcs.gd" id="15_601yx"]
+[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://t2_chair_1.gd" id="13_kw6pd"]
+[ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="14_jopgt"]
+[ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="15_601yx"]
 [ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="16_qwl4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
@@ -36,10 +36,8 @@ size = Vector2(410, 72)
 size = Vector2(379, 31)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc0e3"]
-radius = 25.0
-height = 50.0
-
-[sub_resource type="GDScript" id="GDScript_7jktm"]
+radius = 33.0
+height = 66.0
 
 [sub_resource type="Animation" id="Animation_j5wjh"]
 length = 0.001
@@ -133,6 +131,9 @@ _data = {
 radius = 20.0
 height = 116.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0n6i"]
+radius = 57.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(256, 80)
 
@@ -157,8 +158,8 @@ size = Vector2(225, 80)
 size = Vector2(283, 165)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvswv"]
-radius = 92.30762
-height = 346.15405
+radius = 100.0
+height = 400.0
 
 [node name="Node2D" type="Node2D" unique_id=1368253091]
 position = Vector2(51, 23)
@@ -225,6 +226,14 @@ position = Vector2(370, 145)
 input_pickable = true
 script = ExtResource("2_xspbh")
 
+[node name="PromptLabel" type="Label" parent="Single_NPC" unique_id=548417474]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="OrderLabel" type="Label" parent="Single_NPC" unique_id=412015199]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Sprite2D" type="Sprite2D" parent="Single_NPC" unique_id=1664402478]
 position = Vector2(0.5, -0.5)
 scale = Vector2(0.3828125, 0.3828125)
@@ -235,15 +244,12 @@ texture = ExtResource("3_cps6k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC/Area2D" unique_id=750362819]
 position = Vector2(0.5, -0.5)
 shape = SubResource("CapsuleShape2D_fc0e3")
-script = SubResource("GDScript_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC" unique_id=1403573465]
-position = Vector2(1, -1)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_fc0e3")
-script = SubResource("GDScript_7jktm")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326]
-visible = false
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326 groups=["Player"]]
 position = Vector2(381, 352)
 script = ExtResource("4_8tca4")
 
@@ -262,6 +268,13 @@ libraries/ = SubResource("AnimationLibrary_iotsf")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1543474018]
 position = Vector2(-0.7500305, 0.25)
 shape = SubResource("CapsuleShape2D_7jktm")
+
+[node name="ProximityBubble" type="Area2D" parent="Player" unique_id=291672129]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ProximityBubble" unique_id=741459459]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_v0n6i")
 
 [node name="Table 1" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
 script = ExtResource("6_vfwdf")
@@ -310,7 +323,7 @@ animation = &"seated npc"
 script = ExtResource("13_kw6pd")
 
 [node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
-position = Vector2(439, 395.99994)
+position = Vector2(437, 395.99997)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
@@ -320,6 +333,10 @@ script = ExtResource("14_jopgt")
 position = Vector2(283, 142.99998)
 scale = Vector2(0.26, 0.26)
 script = ExtResource("15_601yx")
+
+[node name="Label" type="Label" parent="Two NPCs" unique_id=210455017]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Two NPCs" unique_id=934966340]
 scale = Vector2(0.359, 0.359)
@@ -337,9 +354,13 @@ position = Vector2(-3.846154, 3.846154)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_rvswv")
 
+[connection signal="body_entered" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Table 1" to="Table 1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Table 1" to="Table 1" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
