@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cmicekrsnyot1"]
+
+[ext_resource type="Script" uid="uid://dy36fu05e1dtc" path="res://npc.gd" id="1_lwg5a"]
+[ext_resource type="Texture2D" uid="uid://l4boe6sc7vms" path="res://icon.svg" id="2_bfy2c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lwg5a"]
+radius = 17.0
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bfy2c"]
+radius = 17.0
+height = 48.0
+
+[node name="CLOSERNPC" type="CharacterBody2D"]
+script = ExtResource("1_lwg5a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_bfy2c")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_lwg5a")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_bfy2c")

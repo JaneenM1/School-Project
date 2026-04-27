@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dcldw24y4conm"]
+
+[ext_resource type="Script" uid="uid://dy36fu05e1dtc" path="res://npc.gd" id="1_xlfsm"]
+[ext_resource type="Texture2D" uid="uid://dxlc2bq5mqoqe" path="res://image-removebg-preview(3).png" id="2_xlfsm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ryrav"]
+custom_solver_bias = 1.0
+radius = 18.75
+height = 48.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xlfsm"]
+radius = 50.666626
+height = 128.0
+
+[node name="CUSTOMERNPC" type="CharacterBody2D" unique_id=1186297751]
+collision_layer = 2
+collision_mask = 3
+safe_margin = 0.1
+script = ExtResource("1_xlfsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003399582]
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_xlfsm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=154924981]
+shape = SubResource("CapsuleShape2D_ryrav")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1492679422]
+scale = Vector2(0.375, 0.375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1459827682]
+shape = SubResource("CapsuleShape2D_xlfsm")
