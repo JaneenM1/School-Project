@@ -300,10 +300,10 @@ position = Vector2(851.5, 272)
 shape = SubResource("RectangleShape2D_iotsf")
 
 [node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
-visible = false
 script = ExtResource("12_52qbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
+visible = false
 position = Vector2(553.5, 454.5)
 shape = SubResource("RectangleShape2D_215e1")
 
