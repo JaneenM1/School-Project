@@ -1,0 +1,377 @@
+[gd_scene format=3 uid="uid://cw860wpbnjsi"]
+
+[ext_resource type="Texture2D" uid="uid://bqvl7rawajj51" path="res://Scene Concept Practice Example.png" id="1_qfvyg"]
+[ext_resource type="Script" uid="uid://s5b5utvdpfg7" path="res://NPC.gd" id="2_lmut2"]
+[ext_resource type="Texture2D" uid="uid://boo0k47jov1v7" path="res://icon.svg" id="3_rb8gi"]
+[ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="4_odl57"]
+[ext_resource type="Texture2D" uid="uid://cx30k7s0wipcp" path="res://sprites.png" id="5_b884r"]
+[ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_6r6ew"]
+[ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://Scene Concept Practice Chair.png" id="7_datoj"]
+[ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="8_cxy0g"]
+[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://t1_chair_1.gd" id="9_evh2x"]
+[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://T1 Chair 2.gd" id="10_ijgne"]
+[ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="11_2xgrq"]
+[ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="12_43fcv"]
+[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://t2_chair_1.gd" id="13_nrjcy"]
+[ext_resource type="Script" path="res://t2_chair_2.gd" id="14_706vu"]
+[ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="15_3d7wv"]
+[ext_resource type="Script" path="res://t3_chair_2.gd" id="16_ameou"]
+[ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="17_umsr6"]
+[ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="18_ubbuw"]
+[ext_resource type="Script" path="res://kitchen.gd" id="19_swns1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(1157, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(44, 520)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(1157, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
+size = Vector2(40, 497)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
+size = Vector2(410, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(379, 31)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc0e3"]
+radius = 25.0
+height = 50.0
+
+[sub_resource type="GDScript" id="GDScript_7jktm"]
+
+[sub_resource type="Animation" id="Animation_j5wjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vef74"]
+resource_name = "walk_down"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2.0333333, 3.0666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+resource_name = "walk_left"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667, 1.0333333, 2.1, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 2, 2, 2]
+}
+
+[sub_resource type="Animation" id="Animation_eow3j"]
+resource_name = "walk_right"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.0333333, 1.9333333, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_mfdv2"]
+resource_name = "walk_up"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333334, 1.0666667, 2.0333333, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 3, 3, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iotsf"]
+_data = {
+&"RESET": SubResource("Animation_j5wjh"),
+&"walk_down": SubResource("Animation_vef74"),
+&"walk_left": SubResource("Animation_hve3p"),
+&"walk_right": SubResource("Animation_eow3j"),
+&"walk_up": SubResource("Animation_mfdv2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jktm"]
+radius = 20.0
+height = 116.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(256, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_215e1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_datoj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_cxy0g")
+}],
+"loop": true,
+"name": &"seated npc",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
+size = Vector2(225, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
+size = Vector2(283, 165)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvswv"]
+radius = 92.30762
+height = 346.15405
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cps6k"]
+size = Vector2(379.5, 157)
+
+[node name="Node2D" type="Node2D" unique_id=1368253091]
+position = Vector2(51, 23)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1931673801]
+offset_left = -219.0
+offset_top = -115.0
+offset_right = 1235.0
+offset_bottom = 748.0
+texture = ExtResource("1_qfvyg")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Back Wall" type="StaticBody2D" parent="." unique_id=1490777925]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Wall" unique_id=1593193183]
+visible = false
+position = Vector2(40, -151)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="Left Wall" type="StaticBody2D" parent="." unique_id=1501994030]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1550271332]
+visible = false
+position = Vector2(-518, 172)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="." unique_id=1954696813]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=1908767372]
+visible = false
+position = Vector2(39, 418)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[node name="Right Wall" type="StaticBody2D" parent="." unique_id=210529405]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=337311302]
+visible = false
+position = Vector2(597, 185)
+shape = SubResource("RectangleShape2D_vef74")
+
+[node name="Waiting Area" type="StaticBody2D" parent="." unique_id=1586592209]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waiting Area" unique_id=2004288611]
+visible = false
+position = Vector2(-290, -50)
+shape = SubResource("RectangleShape2D_hve3p")
+
+[node name="Remaining Kicthen" type="StaticBody2D" parent="." unique_id=2093110399]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Remaining Kicthen" unique_id=1566795551]
+visible = false
+position = Vector2(390, -74)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Single_NPC" type="CharacterBody2D" parent="." unique_id=1698307041]
+position = Vector2(370, 145)
+input_pickable = true
+script = ExtResource("2_lmut2")
+
+[node name="Sprite2D" type="Sprite2D" parent="Single_NPC" unique_id=1664402478]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.3828125, 0.3828125)
+texture = ExtResource("3_rb8gi")
+
+[node name="Area2D" type="Area2D" parent="Single_NPC" unique_id=1395768023]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC/Area2D" unique_id=750362819]
+position = Vector2(0.5, -0.5)
+shape = SubResource("CapsuleShape2D_fc0e3")
+script = SubResource("GDScript_7jktm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC" unique_id=1403573465]
+position = Vector2(1, -1)
+shape = SubResource("CapsuleShape2D_fc0e3")
+script = SubResource("GDScript_7jktm")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326]
+position = Vector2(659, 166)
+script = ExtResource("4_odl57")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player" unique_id=670204784]
+texture_filter = 1
+position = Vector2(0.24998474, 1.2500076)
+scale = Vector2(0.42775667, 0.35866666)
+texture = ExtResource("5_b884r")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Sprite2D2" unique_id=1545947948]
+reset_on_save = false
+root_node = NodePath("../../Sprite2D2")
+libraries/ = SubResource("AnimationLibrary_iotsf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1543474018]
+position = Vector2(-0.7500305, 0.25)
+shape = SubResource("CapsuleShape2D_7jktm")
+
+[node name="Table 1" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
+script = ExtResource("6_6r6ew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 1" unique_id=327079063]
+visible = false
+position = Vector2(200, 280)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="T1 Chair 1" type="AnimatedSprite2D" parent="Table 1" unique_id=651300374]
+position = Vector2(99.5, 249.5)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+script = ExtResource("9_evh2x")
+
+[node name="T1 Chair 2" type="AnimatedSprite2D" parent="Table 1" unique_id=947148626]
+position = Vector2(301, 249)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+flip_h = true
+script = ExtResource("10_ijgne")
+
+[node name="2 Seat Table" type="Area2D" parent="." unique_id=810761712 groups=["Drop Zones"]]
+script = ExtResource("11_2xgrq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2 Seat Table" unique_id=1394164172]
+visible = false
+position = Vector2(851.5, 272)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
+script = ExtResource("12_43fcv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
+visible = false
+position = Vector2(553.5, 454.5)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="T2 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1421199891]
+position = Vector2(765, 268)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+script = ExtResource("13_nrjcy")
+
+[node name="T2 Chair 2" type="AnimatedSprite2D" parent="." unique_id=1789256827]
+position = Vector2(937, 267.99997)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+flip_h = true
+script = ExtResource("14_706vu")
+
+[node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
+position = Vector2(439, 395.99994)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+script = ExtResource("15_3d7wv")
+
+[node name="T3 Chair 2" type="AnimatedSprite2D" parent="." unique_id=480537255]
+position = Vector2(668.00006, 393.99994)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+flip_h = true
+script = ExtResource("16_ameou")
+
+[node name="Two NPCs" type="CharacterBody2D" parent="." unique_id=1635374078]
+position = Vector2(283, 142.99998)
+scale = Vector2(0.26, 0.26)
+script = ExtResource("17_umsr6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Two NPCs" unique_id=934966340]
+scale = Vector2(0.359, 0.359)
+texture = ExtResource("18_ubbuw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Two NPCs" unique_id=813191409]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_rvswv")
+
+[node name="Area2D" type="Area2D" parent="Two NPCs" unique_id=2093784243]
+position = Vector2(3.846154, -3.8460953)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Two NPCs/Area2D" unique_id=1729515137]
+position = Vector2(-3.846154, 3.846154)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_rvswv")
+
+[node name="Kitchen" type="Area2D" parent="." unique_id=385279870]
+position = Vector2(874, 67)
+script = ExtResource("19_swns1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kitchen" unique_id=1604175989]
+visible = false
+position = Vector2(4.25, -10)
+shape = SubResource("RectangleShape2D_cps6k")
+
+[connection signal="mouse_entered" from="Table 1" to="Table 1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Table 1" to="Table 1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Kitchen" to="Kitchen" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Kitchen" to="Kitchen" method="_on_mouse_exited"]

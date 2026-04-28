@@ -11,6 +11,10 @@ func _ready():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if Global_Var.move_wait == true:
+			Global_Var.move_wait = false
+			return
+		
 		var space_state = get_world_2d().direct_space_state
 		
 		# Cast ray from mouse click
@@ -22,12 +26,13 @@ func _unhandled_input(event):
 		var result = space_state.intersect_point(query)
 		
 		# If clicked on a collider
-		if result.size() > 0:
-			target_position = get_global_mouse_position()
-			moving = true
+		if Global_Var.can_move == true:
+			if result.size() > 0:
+				target_position = get_global_mouse_position()
+				moving = true
 
-func _physics_process(delta):
-	if moving:
+func _physics_process(_delta):
+	if moving and Global_Var.grabbed_one == false and Global_Var.grabbed_two == false:
 		var direction = target_position - global_position
 		
 		if direction.length() > 5:
