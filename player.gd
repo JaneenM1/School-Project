@@ -2,7 +2,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 220.0
-
+var player_in_range := false
 var target_position: Vector2
 var moving := false
 

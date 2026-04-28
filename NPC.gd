@@ -27,8 +27,9 @@ func _input(event):
 		if not event.pressed:
 			if Global_Var.can_drop == true:
 				if Global_Var.grabbed_one == true:
-					Global_Var.grabbed_one = false
-					queue_free()
+					if Global_Var.at_table_1 or Global_Var.at_table_2 or Global_Var.at_table_3:
+						queue_free()
+						Global_Var.grabbed_one = false
 
 
 func _input_event(_viewport, event, _shape_idx):
