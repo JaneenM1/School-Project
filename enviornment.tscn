@@ -1,21 +1,27 @@
-[gd_scene format=3 uid="uid://c6egfvm65c5si"]
+[gd_scene format=3 uid="uid://b3mncn37gjmvy"]
 
-[ext_resource type="Texture2D" uid="uid://bqvl7rawajj51" path="res://demo/Scene Concept Practice Example.png" id="1_80nbo"]
-[ext_resource type="Script" uid="uid://s5b5utvdpfg7" path="res://NPC.gd" id="2_7jktm"]
-[ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="3_fc0e3"]
-[ext_resource type="Texture2D" uid="uid://boo0k47jov1v7" path="res://icon.svg" id="3_feb5d"]
-[ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_eow3j"]
-[ext_resource type="Texture2D" uid="uid://cx30k7s0wipcp" path="res://sprites.png" id="6_ryrav"]
-[ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="7_eow3j"]
-[ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="8_j5wjh"]
-[ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://demo/Scene Concept Practice Chair.png" id="9_mfdv2"]
-[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://code 4 chairs/T1 Chair 2.gd" id="10_80cx4"]
-[ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="10_iotsf"]
-[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://code 4 chairs/t1_chair_1.gd" id="11_lc2xo"]
-[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://code 4 chairs/t2_chair_1.gd" id="12_iotsf"]
-[ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://code 4 chairs/t3_chair_1.gd" id="13_lc2xo"]
-[ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="14_7sc4i"]
-[ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="15_80cx4"]
+[ext_resource type="Texture2D" uid="uid://crk6djhtq1v5m" path="res://Ground.png" id="1_0k2rf"]
+[ext_resource type="Script" uid="uid://s5b5utvdpfg7" path="res://NPC.gd" id="2_xspbh"]
+[ext_resource type="Texture2D" uid="uid://dcminc7ooah37" path="res://Back Wall.png" id="2_yehxm"]
+[ext_resource type="Texture2D" uid="uid://boo0k47jov1v7" path="res://icon.svg" id="3_cps6k"]
+[ext_resource type="Texture2D" uid="uid://ctjp0ubmb3or8" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Background/Side Walls.png" id="3_wjsfy"]
+[ext_resource type="Texture2D" uid="uid://iexngk54xylp" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Tables + Chairs/Kitchen Table.png" id="4_0k2rf"]
+[ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="4_8tca4"]
+[ext_resource type="Texture2D" uid="uid://cx30k7s0wipcp" path="res://sprites.png" id="5_boqrt"]
+[ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_vfwdf"]
+[ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://Scene Concept Practice Chair.png" id="7_v0n6i"]
+[ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="8_nuj7l"]
+[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://t1_chair_1.gd" id="9_7drl1"]
+[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://T1 Chair 2.gd" id="10_2wyxb"]
+[ext_resource type="Texture2D" uid="uid://dtba1454c3vrm" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Tables + Chairs/Tables.png" id="10_tax2s"]
+[ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="11_ugvmw"]
+[ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="12_52qbx"]
+[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://t2_chair_1.gd" id="13_kw6pd"]
+[ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="14_jopgt"]
+[ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="15_601yx"]
+[ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="16_qwl4e"]
+[ext_resource type="Script" uid="uid://bo0uelkxryii3" path="res://addons/sprite_cutter/AtlasScene.gd" id="21_ofjn0"]
+[ext_resource type="Texture2D" uid="uid://b0k64ulitoxe1" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Tables + Chairs/Chairs.png" id="22_ppmum"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
 size = Vector2(1157, 128)
@@ -36,10 +42,8 @@ size = Vector2(410, 72)
 size = Vector2(379, 31)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc0e3"]
-radius = 25.0
-height = 50.0
-
-[sub_resource type="GDScript" id="GDScript_7jktm"]
+radius = 33.0
+height = 66.0
 
 [sub_resource type="Animation" id="Animation_j5wjh"]
 length = 0.001
@@ -133,6 +137,9 @@ _data = {
 radius = 20.0
 height = 116.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0n6i"]
+radius = 57.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
 size = Vector2(256, 80)
 
@@ -140,10 +147,10 @@ size = Vector2(256, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("9_mfdv2")
+"texture": ExtResource("7_v0n6i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_iotsf")
+"texture": ExtResource("8_nuj7l")
 }],
 "loop": true,
 "name": &"seated npc",
@@ -157,8 +164,8 @@ size = Vector2(225, 80)
 size = Vector2(283, 165)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvswv"]
-radius = 92.30762
-height = 346.15405
+radius = 100.0
+height = 400.0
 
 [node name="Node2D" type="Node2D" unique_id=1368253091]
 position = Vector2(51, 23)
@@ -168,11 +175,17 @@ offset_left = -219.0
 offset_top = -115.0
 offset_right = 1235.0
 offset_bottom = 748.0
-texture = ExtResource("1_80nbo")
+texture = ExtResource("1_0k2rf")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Back Wall" type="StaticBody2D" parent="." unique_id=1490777925]
 position = Vector2(487, 192)
+
+[node name="BackWall" type="Sprite2D" parent="Back Wall" unique_id=1395109863]
+position = Vector2(46, 172)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("2_yehxm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Back Wall" unique_id=1593193183]
 visible = false
@@ -186,6 +199,14 @@ position = Vector2(487, 192)
 visible = false
 position = Vector2(-518, 172)
 shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="side wall L" type="Sprite2D" parent="Left Wall" unique_id=539655569]
+z_index = 2
+position = Vector2(-492.00003, 78)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("3_wjsfy")
+region_enabled = true
+region_rect = Rect2(0, 197, 55, 412)
 
 [node name="Bottom Wall" type="StaticBody2D" parent="." unique_id=1954696813]
 position = Vector2(487, 192)
@@ -203,6 +224,14 @@ visible = false
 position = Vector2(597, 185)
 shape = SubResource("RectangleShape2D_vef74")
 
+[node name="side wall R" type="Sprite2D" parent="Right Wall" unique_id=1138068966]
+z_index = 2
+position = Vector2(569, 75)
+scale = Vector2(1.75, 1.75)
+texture = ExtResource("3_wjsfy")
+region_enabled = true
+region_rect = Rect2(639, 197, 55, 412)
+
 [node name="Waiting Area" type="StaticBody2D" parent="." unique_id=1586592209]
 position = Vector2(487, 192)
 
@@ -215,42 +244,52 @@ shape = SubResource("RectangleShape2D_hve3p")
 position = Vector2(487, 192)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Remaining Kicthen" unique_id=1566795551]
-visible = false
 position = Vector2(390, -74)
 shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="kitchen" type="Sprite2D" parent="Remaining Kicthen" unique_id=1436682446]
+position = Vector2(435, -87)
+texture = ExtResource("4_0k2rf")
+region_enabled = true
+region_rect = Rect2(386, 187, 308, 77)
 
 [node name="Single_NPC" type="CharacterBody2D" parent="." unique_id=1698307041]
 position = Vector2(370, 145)
 input_pickable = true
-script = ExtResource("2_7jktm")
+script = ExtResource("2_xspbh")
+
+[node name="PromptLabel" type="Label" parent="Single_NPC" unique_id=548417474]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="OrderLabel" type="Label" parent="Single_NPC" unique_id=412015199]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Single_NPC" unique_id=1664402478]
 position = Vector2(0.5, -0.5)
 scale = Vector2(0.3828125, 0.3828125)
-texture = ExtResource("3_feb5d")
+texture = ExtResource("3_cps6k")
 
 [node name="Area2D" type="Area2D" parent="Single_NPC" unique_id=1395768023]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC/Area2D" unique_id=750362819]
 position = Vector2(0.5, -0.5)
 shape = SubResource("CapsuleShape2D_fc0e3")
-script = SubResource("GDScript_7jktm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC" unique_id=1403573465]
-position = Vector2(1, -1)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_fc0e3")
-script = SubResource("GDScript_7jktm")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326]
-visible = false
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326 groups=["Player"]]
 position = Vector2(381, 352)
-script = ExtResource("3_fc0e3")
+script = ExtResource("4_8tca4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player" unique_id=670204784]
 texture_filter = 1
 position = Vector2(0.24998474, 1.2500076)
 scale = Vector2(0.42775667, 0.35866666)
-texture = ExtResource("6_ryrav")
+texture = ExtResource("5_boqrt")
 hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Sprite2D2" unique_id=1545947948]
@@ -262,67 +301,96 @@ libraries/ = SubResource("AnimationLibrary_iotsf")
 position = Vector2(-0.7500305, 0.25)
 shape = SubResource("CapsuleShape2D_7jktm")
 
-[node name="Table 1" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
-script = ExtResource("6_eow3j")
+[node name="ProximityBubble" type="Area2D" parent="Player" unique_id=291672129]
+position = Vector2(1, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 1" unique_id=327079063]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ProximityBubble" unique_id=741459459]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_v0n6i")
+
+[node name="4 table" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
+script = ExtResource("6_vfwdf")
+
+[node name="Tables2" type="Sprite2D" parent="4 table" unique_id=552957501]
+position = Vector2(196, 276)
+texture = ExtResource("10_tax2s")
+region_enabled = true
+region_rect = Rect2(362, 359, 109, 99)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4 table" unique_id=327079063]
 visible = false
 position = Vector2(200, 280)
 shape = SubResource("RectangleShape2D_7jktm")
 
-[node name="T1 Chair 1" type="AnimatedSprite2D" parent="Table 1" unique_id=651300374]
+[node name="T1 Chair 1" type="AnimatedSprite2D" parent="4 table" unique_id=651300374]
 position = Vector2(99.5, 249.5)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
-script = ExtResource("11_lc2xo")
+script = ExtResource("9_7drl1")
 
-[node name="T1 Chair 2" type="AnimatedSprite2D" parent="Table 1" unique_id=947148626]
+[node name="T1 Chair 2" type="AnimatedSprite2D" parent="4 table" unique_id=947148626]
 position = Vector2(301, 249)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 flip_h = true
-script = ExtResource("10_80cx4")
+script = ExtResource("10_2wyxb")
 
 [node name="2 Seat Table" type="Area2D" parent="." unique_id=810761712 groups=["Drop Zones"]]
-script = ExtResource("7_eow3j")
+script = ExtResource("11_ugvmw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2 Seat Table" unique_id=1394164172]
 visible = false
 position = Vector2(851.5, 272)
 shape = SubResource("RectangleShape2D_iotsf")
 
+[node name="Tables" type="Sprite2D" parent="2 Seat Table" unique_id=463837901]
+position = Vector2(853, 274)
+texture = ExtResource("10_tax2s")
+region_enabled = true
+region_rect = Rect2(367, 274, 107, 73)
+
 [node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
-script = ExtResource("8_j5wjh")
+script = ExtResource("12_52qbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
 visible = false
 position = Vector2(553.5, 454.5)
 shape = SubResource("RectangleShape2D_215e1")
 
+[node name="Tables3" type="Sprite2D" parent="." unique_id=1561401282]
+position = Vector2(552, 455)
+texture = ExtResource("10_tax2s")
+region_enabled = true
+region_rect = Rect2(361, 465, 110, 131)
+
 [node name="T2 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1421199891]
 position = Vector2(765, 268)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
-script = ExtResource("12_iotsf")
+script = ExtResource("13_kw6pd")
 
 [node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
-position = Vector2(439, 395.99994)
+position = Vector2(437, 395.99997)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
-script = ExtResource("13_lc2xo")
+script = ExtResource("14_jopgt")
 
 [node name="Two NPCs" type="CharacterBody2D" parent="." unique_id=1635374078]
 position = Vector2(283, 142.99998)
 scale = Vector2(0.26, 0.26)
-script = ExtResource("14_7sc4i")
+script = ExtResource("15_601yx")
+
+[node name="Label" type="Label" parent="Two NPCs" unique_id=210455017]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Two NPCs" unique_id=934966340]
 scale = Vector2(0.359, 0.359)
-texture = ExtResource("15_80cx4")
+texture = ExtResource("16_qwl4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Two NPCs" unique_id=813191409]
 rotation = 1.5707964
@@ -336,9 +404,101 @@ position = Vector2(-3.846154, 3.846154)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_rvswv")
 
-[connection signal="mouse_entered" from="Table 1" to="Table 1" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Table 1" to="Table 1" method="_on_mouse_exited"]
+[node name="AtlasScene" type="Node" parent="." unique_id=866483957]
+script = ExtResource("21_ofjn0")
+metadata/_custom_type_script = "uid://bo0uelkxryii3"
+
+[node name="chair" type="Sprite2D" parent="AtlasScene" unique_id=1457769998]
+position = Vector2(158, 285)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair2" type="Sprite2D" parent="AtlasScene" unique_id=617735600]
+position = Vector2(348, 287)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair3" type="Sprite2D" parent="AtlasScene" unique_id=713777309]
+position = Vector2(157, 325)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair4" type="Sprite2D" parent="AtlasScene" unique_id=1559169263]
+position = Vector2(348, 325)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair5" type="Sprite2D" parent="AtlasScene" unique_id=487698800]
+position = Vector2(494, 431)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair6" type="Sprite2D" parent="AtlasScene" unique_id=452249596]
+position = Vector2(495, 471)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair7" type="Sprite2D" parent="AtlasScene" unique_id=461028083]
+position = Vector2(495, 526)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair8" type="Sprite2D" parent="AtlasScene" unique_id=1314822322]
+position = Vector2(713, 429)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair9" type="Sprite2D" parent="AtlasScene" unique_id=1214934209]
+position = Vector2(714, 467.99997)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair10" type="Sprite2D" parent="AtlasScene" unique_id=1225723906]
+position = Vector2(715, 526)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair11" type="Sprite2D" parent="AtlasScene" unique_id=123063347]
+position = Vector2(827, 303)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[node name="chair12" type="Sprite2D" parent="AtlasScene" unique_id=1046921829]
+position = Vector2(984, 303)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("22_ppmum")
+region_enabled = true
+region_rect = Rect2(323, 289, 39, 30)
+
+[connection signal="body_entered" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="4 table" to="4 table" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="4 table" to="4 table" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]

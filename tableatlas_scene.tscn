@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://tomsxoy4jfl5"]
+
+[ext_resource type="Script" uid="uid://bo0uelkxryii3" path="res://addons/sprite_cutter/AtlasScene.gd" id="1_y8ncj"]
+[ext_resource type="Texture2D" uid="uid://iexngk54xylp" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Tables + Chairs/Kitchen Table.png" id="2_qegfp"]
+[ext_resource type="Texture2D" uid="uid://dtba1454c3vrm" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Tables + Chairs/Tables.png" id="2_x0c1m"]
+[ext_resource type="Texture2D" uid="uid://b0k64ulitoxe1" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Tables + Chairs/Chairs.png" id="3_x0c1m"]
+[ext_resource type="Texture2D" uid="uid://ctjp0ubmb3or8" path="res://Scene 1- Rocky Diner/Scene 1- Rocky Diner/Background/Side Walls.png" id="5_j78xv"]
+
+[node name="AtlasScene" type="Node" unique_id=1413786519]
+script = ExtResource("1_y8ncj")
+destination_path = "res://furniture+bg"
+metadata/_custom_type_script = "uid://bo0uelkxryii3"
+
+[node name="kitchen table" type="Sprite2D" parent="." unique_id=821130221]
+position = Vector2(509, 417)
+texture = ExtResource("2_qegfp")
+region_enabled = true
+region_rect = Rect2(386, 187, 308, 77)
+
+[node name="chair" type="Sprite2D" parent="." unique_id=918799054]
+position = Vector2(279, 392)
+scale = Vector2(2, 2)
+texture = ExtResource("3_x0c1m")
+region_enabled = true
+region_rect = Rect2(324, 323, 39, 29)
+
+[node name="Small table" type="Sprite2D" parent="." unique_id=867910999]
+texture_filter = 1
+position = Vector2(278, 274)
+texture = ExtResource("2_x0c1m")
+region_enabled = true
+region_rect = Rect2(367, 274, 107, 73)
+
+[node name="Medium table" type="Sprite2D" parent="." unique_id=1373424330]
+position = Vector2(456, 276)
+texture = ExtResource("2_x0c1m")
+region_enabled = true
+region_rect = Rect2(480, 359, 110, 99)
+
+[node name="Large table2" type="Sprite2D" parent="." unique_id=606744554]
+position = Vector2(616, 280)
+texture = ExtResource("2_x0c1m")
+region_enabled = true
+region_rect = Rect2(479, 465, 110, 131)
+
+[node name="R boarder" type="Sprite2D" parent="." unique_id=1770500452]
+position = Vector2(842, 330)
+texture = ExtResource("5_j78xv")
+region_enabled = true
+region_rect = Rect2(639, 197, 55, 412)
+
+[node name="L boarder" type="Sprite2D" parent="." unique_id=857900773]
+position = Vector2(116, 336)
+texture = ExtResource("5_j78xv")
+region_enabled = true
+region_rect = Rect2(0, 197, 55, 412)
