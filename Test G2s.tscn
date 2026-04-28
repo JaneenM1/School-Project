@@ -1,0 +1,416 @@
+[gd_scene format=3 uid="uid://dcd5arfjh6xoy"]
+
+[ext_resource type="Texture2D" uid="uid://bkav2wdlolcg5" path="res://Scene Assets/Background/Back Wall.png" id="1_n7ycy"]
+[ext_resource type="Texture2D" uid="uid://cwl1k7ctn0ff1" path="res://Scene Assets/Background/Side Walls.png" id="2_3vj1m"]
+[ext_resource type="Script" uid="uid://s5b5utvdpfg7" path="res://NPC.gd" id="2_g1kaf"]
+[ext_resource type="Texture2D" uid="uid://boo0k47jov1v7" path="res://icon.svg" id="3_g3blg"]
+[ext_resource type="Script" uid="uid://xscasvhmlf3a" path="res://player.gd" id="4_p5cqx"]
+[ext_resource type="Texture2D" uid="uid://bwvlmg621rw0g" path="res://Scene Assets/Tables + Chairs/Kitchen Table.png" id="5_hm6bu"]
+[ext_resource type="Texture2D" uid="uid://cx30k7s0wipcp" path="res://sprites.png" id="5_n7ycy"]
+[ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_3vj1m"]
+[ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://Scene Concept Practice Chair.png" id="7_hm6bu"]
+[ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="8_8cdk6"]
+[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://t1_chair_1.gd" id="9_mre14"]
+[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://T1 Chair 2.gd" id="10_yoi4m"]
+[ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="11_bun5q"]
+[ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="12_iv2sn"]
+[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://t2_chair_1.gd" id="13_3nn5c"]
+[ext_resource type="Texture2D" uid="uid://bfl0yhysifnsx" path="res://Scene Assets/Tables + Chairs/Chairs.png" id="13_8cdk6"]
+[ext_resource type="Texture2D" uid="uid://dudbrgdg8urag" path="res://Scene Assets/Tables + Chairs/Tables.png" id="14_mre14"]
+[ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="14_o6vkk"]
+[ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="15_x1u26"]
+[ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="16_7sspm"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_yoi4m"]
+load_path = "res://.godot/imported/Ground.png-4dd7d07de821aa2f48cc8ba5fc428698.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
+size = Vector2(1469, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eow3j"]
+size = Vector2(44, 755)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5wjh"]
+size = Vector2(1411.5, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vef74"]
+size = Vector2(40, 771.5)
+
+[sub_resource type="Animation" id="Animation_j5wjh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vef74"]
+resource_name = "walk_down"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2.0333333, 3.0666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 1, 1, 1]
+}
+
+[sub_resource type="Animation" id="Animation_hve3p"]
+resource_name = "walk_left"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.16666667, 1.0333333, 2.1, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [2, 2, 2, 2]
+}
+
+[sub_resource type="Animation" id="Animation_eow3j"]
+resource_name = "walk_right"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 1.0333333, 1.9333333, 2.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_mfdv2"]
+resource_name = "walk_up"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.13333334, 1.0666667, 2.0333333, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 3, 3, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iotsf"]
+_data = {
+&"RESET": SubResource("Animation_j5wjh"),
+&"walk_down": SubResource("Animation_vef74"),
+&"walk_left": SubResource("Animation_hve3p"),
+&"walk_right": SubResource("Animation_eow3j"),
+&"walk_up": SubResource("Animation_mfdv2")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7jktm"]
+radius = 20.0
+height = 66.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v0n6i"]
+radius = 27.018513
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hve3p"]
+size = Vector2(410, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfdv2"]
+size = Vector2(446, 26.75)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fc0e3"]
+radius = 33.0
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jktm"]
+size = Vector2(322, 7.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_215e1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hm6bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_8cdk6")
+}],
+"loop": true,
+"name": &"seated npc",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
+size = Vector2(337.125, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_215e1"]
+size = Vector2(333.75, 61.875)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvswv"]
+radius = 100.0
+height = 400.0
+
+[node name="Node2D" type="Node2D" unique_id=1368253091]
+position = Vector2(51, 23)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1931673801]
+offset_left = -219.0
+offset_top = -115.0
+offset_right = 1235.0
+offset_bottom = 748.0
+texture = SubResource("CompressedTexture2D_yoi4m")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Back Wall" type="StaticBody2D" parent="." unique_id=1490777925]
+position = Vector2(487, 192)
+
+[node name="BackWall New" type="Sprite2D" parent="Back Wall" unique_id=1196710862]
+position = Vector2(19, 143)
+scale = Vector2(2.1224782, 1.5172414)
+texture = ExtResource("1_n7ycy")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Wall" unique_id=1593193183]
+position = Vector2(21.5, -238.5)
+shape = SubResource("RectangleShape2D_ryrav")
+
+[node name="Camera2D" type="Camera2D" parent="Back Wall/CollisionShape2D" unique_id=1195128657]
+position = Vector2(1.5, 359.5)
+zoom = Vector2(0.8, 0.75)
+
+[node name="Left Wall" type="StaticBody2D" parent="." unique_id=1501994030]
+position = Vector2(487, 192)
+
+[node name="SideWalls2" type="Sprite2D" parent="Left Wall" unique_id=283669169]
+position = Vector2(21, 184)
+scale = Vector2(2.1123917, 1.2287562)
+texture = ExtResource("2_3vj1m")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1550271332]
+position = Vector2(-688, 196.5)
+shape = SubResource("RectangleShape2D_eow3j")
+
+[node name="Bottom Wall" type="StaticBody2D" parent="." unique_id=1954696813]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=1908767372]
+position = Vector2(37.25, 549.5)
+shape = SubResource("RectangleShape2D_j5wjh")
+
+[node name="Right Wall" type="StaticBody2D" parent="." unique_id=210529405]
+position = Vector2(487, 192)
+
+[node name="SideWalls" type="Sprite2D" parent="Right Wall" unique_id=741968782]
+z_index = 5
+position = Vector2(21, 184)
+scale = Vector2(2.1123917, 1.2287562)
+texture = ExtResource("2_3vj1m")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=337311302]
+position = Vector2(723, 196.75)
+shape = SubResource("RectangleShape2D_vef74")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1894634326 groups=["Player"]]
+z_index = 4
+position = Vector2(381, 352)
+script = ExtResource("4_p5cqx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player" unique_id=670204784]
+texture_filter = 1
+position = Vector2(198.24995, -282.75)
+scale = Vector2(0.6825095, 0.6066666)
+texture = ExtResource("5_n7ycy")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/Sprite2D2" unique_id=1545947948]
+reset_on_save = false
+libraries/ = SubResource("AnimationLibrary_iotsf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player" unique_id=1543474018]
+position = Vector2(197, -274)
+shape = SubResource("CapsuleShape2D_7jktm")
+
+[node name="ProximityBubble" type="Area2D" parent="Player" unique_id=291672129]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ProximityBubble" unique_id=741459459]
+position = Vector2(195, -273)
+shape = SubResource("CircleShape2D_v0n6i")
+
+[node name="Waiting Area" type="StaticBody2D" parent="." unique_id=1586592209]
+position = Vector2(487, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waiting Area" unique_id=2004288611]
+visible = false
+position = Vector2(-290, -50)
+shape = SubResource("RectangleShape2D_hve3p")
+
+[node name="Remaining Kicthen" type="StaticBody2D" parent="." unique_id=2093110399]
+position = Vector2(487, 192)
+
+[node name="KitchenTable" type="Sprite2D" parent="Remaining Kicthen" unique_id=32960459]
+z_index = 1
+position = Vector2(226.8125, 192.73436)
+scale = Vector2(1.5210736, 2.0024116)
+texture = ExtResource("5_hm6bu")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Remaining Kicthen" unique_id=1566795551]
+z_index = 1
+position = Vector2(522, 13.625)
+shape = SubResource("RectangleShape2D_mfdv2")
+
+[node name="Single_NPC" type="CharacterBody2D" parent="." unique_id=1698307041]
+position = Vector2(370, 145)
+input_pickable = true
+script = ExtResource("2_g1kaf")
+
+[node name="PromptLabel" type="Label" parent="Single_NPC" unique_id=548417474]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="OrderLabel" type="Label" parent="Single_NPC" unique_id=412015199]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Single_NPC" unique_id=1664402478]
+position = Vector2(0.5, -0.5)
+scale = Vector2(0.3828125, 0.3828125)
+texture = ExtResource("3_g3blg")
+
+[node name="Area2D" type="Area2D" parent="Single_NPC" unique_id=1395768023]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC/Area2D" unique_id=750362819]
+position = Vector2(0.5, -0.5)
+shape = SubResource("CapsuleShape2D_fc0e3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Single_NPC" unique_id=1403573465]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_fc0e3")
+
+[node name="Table 1" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
+script = ExtResource("6_3vj1m")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 1" unique_id=327079063]
+z_index = 2
+position = Vector2(278, 235.25)
+shape = SubResource("RectangleShape2D_7jktm")
+
+[node name="T1 Chair 1" type="AnimatedSprite2D" parent="Table 1" unique_id=651300374]
+visible = false
+position = Vector2(99.5, 249.5)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+script = ExtResource("9_mre14")
+
+[node name="T1 Chair 2" type="AnimatedSprite2D" parent="Table 1" unique_id=947148626]
+visible = false
+position = Vector2(301, 249)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+flip_h = true
+script = ExtResource("10_yoi4m")
+
+[node name="Chairs" type="Sprite2D" parent="Table 1" unique_id=1430509478]
+position = Vector2(48, 390)
+scale = Vector2(2.0090058, 2.1857555)
+texture = ExtResource("13_8cdk6")
+metadata/_edit_lock_ = true
+
+[node name="Tables" type="Sprite2D" parent="Table 1" unique_id=796117386]
+position = Vector2(81, 239)
+scale = Vector2(1.5036024, 1.7313217)
+texture = ExtResource("14_mre14")
+metadata/_edit_lock_ = true
+
+[node name="2 Seat Table" type="Area2D" parent="." unique_id=810761712 groups=["Drop Zones"]]
+script = ExtResource("11_bun5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2 Seat Table" unique_id=1394164172]
+position = Vector2(275, 402.5)
+shape = SubResource("RectangleShape2D_iotsf")
+
+[node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
+script = ExtResource("12_iv2sn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
+position = Vector2(279, 607.0625)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="T2 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1421199891]
+visible = false
+position = Vector2(765, 268)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+script = ExtResource("13_3nn5c")
+
+[node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
+visible = false
+position = Vector2(437, 395.99997)
+scale = Vector2(0.34687498, 0.28534037)
+sprite_frames = SubResource("SpriteFrames_215e1")
+animation = &"seated npc"
+script = ExtResource("14_o6vkk")
+
+[node name="Two NPCs" type="CharacterBody2D" parent="." unique_id=1635374078]
+visible = false
+position = Vector2(283, 142.99998)
+scale = Vector2(0.26, 0.26)
+script = ExtResource("15_x1u26")
+
+[node name="Label" type="Label" parent="Two NPCs" unique_id=210455017]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Two NPCs" unique_id=934966340]
+scale = Vector2(0.359, 0.359)
+texture = ExtResource("16_7sspm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Two NPCs" unique_id=813191409]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_rvswv")
+
+[node name="Area2D" type="Area2D" parent="Two NPCs" unique_id=2093784243]
+position = Vector2(3.846154, -3.8460953)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Two NPCs/Area2D" unique_id=1729515137]
+position = Vector2(-11.538462, -3.846154)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_rvswv")
+
+[connection signal="body_entered" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
+[connection signal="mouse_entered" from="Table 1" to="Table 1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Table 1" to="Table 1" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
