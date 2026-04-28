@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dungeon Diner - Repo 3"
-run/main_scene="uid://c004b1qqg3dsf"
+run/main_scene="uid://bc3idfx02xjyd"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,9 +19,13 @@ config/icon="res://icon.svg"
 
 Global_Var="*uid://b621h5kr7itug"
 
-[editor_plugins]
+[input]
 
-enabled=PackedStringArray("res://addons/sprite_cutter/plugin.cfg")
+Interact={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
 
 [physics]
 
