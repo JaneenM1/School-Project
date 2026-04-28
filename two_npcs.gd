@@ -20,4 +20,3 @@ func _input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			Global_Var.grabbed_two = true
-			Global_Var.move_wait = true

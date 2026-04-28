@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Dungeon Diner - Repo 3"
-run/main_scene="uid://bc3idfx02xjyd"
+run/main_scene="uid://c004b1qqg3dsf"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global_Var="*uid://b621h5kr7itug"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/sprite_cutter/plugin.cfg")
 
 [physics]
 
