@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="14_pg3gr"]
 [ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="15_uv2ho"]
 [ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="16_4mj3r"]
+[ext_resource type="PackedScene" uid="uid://b3mncn37gjmvy" path="res://enviornment.tscn" id="16_08smd"]
 [ext_resource type="PackedScene" uid="uid://b46oyldk155jq" path="res://kitchen_station.tscn" id="17_b1a1a"]
 [ext_resource type="PackedScene" uid="uid://dxjwrvj3lx2ix" path="res://burger.tscn" id="18_pnhgs"]
 
@@ -167,6 +168,7 @@ height = 400.0
 position = Vector2(51, 23)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1931673801]
+visible = false
 offset_left = -219.0
 offset_top = -115.0
 offset_right = 1235.0
@@ -175,46 +177,47 @@ texture = ExtResource("1_08smd")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Back Wall" type="StaticBody2D" parent="." unique_id=1490777925]
-position = Vector2(487, 192)
+[node name="Collision" type="Node" parent="." unique_id=374297586]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Wall" unique_id=1593193183]
-visible = false
+[node name="Back Wall" type="StaticBody2D" parent="Collision" unique_id=1490777925]
+position = Vector2(538, 215)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Back Wall" unique_id=1593193183]
 position = Vector2(40, -151)
 shape = SubResource("RectangleShape2D_ryrav")
 
-[node name="Left Wall" type="StaticBody2D" parent="." unique_id=1501994030]
-position = Vector2(487, 192)
+[node name="Left Wall" type="StaticBody2D" parent="Collision" unique_id=1501994030]
+position = Vector2(538, 215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Left Wall" unique_id=1550271332]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Left Wall" unique_id=1550271332]
 position = Vector2(-518, 172)
 shape = SubResource("RectangleShape2D_eow3j")
 
-[node name="Bottom Wall" type="StaticBody2D" parent="." unique_id=1954696813]
-position = Vector2(487, 192)
+[node name="Bottom Wall" type="StaticBody2D" parent="Collision" unique_id=1954696813]
+position = Vector2(538, 215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom Wall" unique_id=1908767372]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Bottom Wall" unique_id=1908767372]
 position = Vector2(39, 418)
 shape = SubResource("RectangleShape2D_j5wjh")
 
-[node name="Right Wall" type="StaticBody2D" parent="." unique_id=210529405]
-position = Vector2(487, 192)
+[node name="Right Wall" type="StaticBody2D" parent="Collision" unique_id=210529405]
+position = Vector2(538, 215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Right Wall" unique_id=337311302]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Right Wall" unique_id=337311302]
 position = Vector2(597, 185)
 shape = SubResource("RectangleShape2D_vef74")
 
-[node name="Waiting Area" type="StaticBody2D" parent="." unique_id=1586592209]
-position = Vector2(487, 192)
+[node name="Waiting Area" type="StaticBody2D" parent="Collision" unique_id=1586592209]
+position = Vector2(538, 215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Waiting Area" unique_id=2004288611]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Waiting Area" unique_id=2004288611]
 position = Vector2(-290, -50)
 shape = SubResource("RectangleShape2D_hve3p")
 
-[node name="Remaining Kicthen" type="StaticBody2D" parent="." unique_id=2093110399]
-position = Vector2(487, 192)
+[node name="Remaining Kicthen" type="StaticBody2D" parent="Collision" unique_id=2093110399]
+position = Vector2(538, 215)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Remaining Kicthen" unique_id=1566795551]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/Remaining Kicthen" unique_id=1566795551]
 position = Vector2(390, -74)
 shape = SubResource("RectangleShape2D_mfdv2")
 
@@ -277,8 +280,10 @@ shape = SubResource("CircleShape2D_v0n6i")
 position = Vector2(-2, -65)
 
 [node name="What table" type="Label" parent="Player" unique_id=1160164667]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -39.0
+offset_top = -90.0
+offset_right = 39.0
+offset_bottom = -55.0
 
 [node name="Table 1" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
 script = ExtResource("6_d03lc")
@@ -288,6 +293,7 @@ position = Vector2(200, 280)
 shape = SubResource("RectangleShape2D_7jktm")
 
 [node name="T1 Chair 1" type="AnimatedSprite2D" parent="Table 1" unique_id=651300374]
+z_index = 1
 position = Vector2(99.5, 249.5)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
@@ -310,6 +316,7 @@ scale = Vector2(3.36, 3.36)
 position = Vector2(162.88293, 26.2844)
 
 [node name="T1 Chair 2" type="AnimatedSprite2D" parent="Table 1" unique_id=947148626]
+z_index = 1
 position = Vector2(301, 249)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
@@ -333,7 +340,6 @@ scale = Vector2(3.36, 3.36)
 position = Vector2(-187.38736, 24.532106)
 
 [node name="2 Seat Table" type="Area2D" parent="." unique_id=810761712 groups=["Drop Zones"]]
-visible = false
 script = ExtResource("11_k4kxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2 Seat Table" unique_id=1394164172]
@@ -341,6 +347,7 @@ position = Vector2(851.5, 272)
 shape = SubResource("RectangleShape2D_iotsf")
 
 [node name="T2 Chair 1" type="AnimatedSprite2D" parent="2 Seat Table" unique_id=1421199891]
+z_index = 1
 position = Vector2(765, 268)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
@@ -363,7 +370,6 @@ scale = Vector2(3.36, 3.36)
 position = Vector2(210.4505, 3.5045872)
 
 [node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
-visible = false
 script = ExtResource("12_1s0wa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
@@ -371,6 +377,7 @@ position = Vector2(553.5, 454.5)
 shape = SubResource("RectangleShape2D_215e1")
 
 [node name="T3 Chair 1" type="AnimatedSprite2D" parent="6 Seat Table" unique_id=1233112606]
+z_index = 1
 position = Vector2(437, 395.99997)
 scale = Vector2(0.27, 0.27)
 sprite_frames = SubResource("SpriteFrames_215e1")
@@ -428,6 +435,9 @@ text = "Press E"
 [node name="Burger" parent="Food" unique_id=891991543 instance=ExtResource("18_pnhgs")]
 position = Vector2(902, 97)
 scale = Vector2(2, 2)
+
+[node name="Node2D" parent="." unique_id=581459676 instance=ExtResource("16_08smd")]
+z_index = -1
 
 [connection signal="body_entered" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
