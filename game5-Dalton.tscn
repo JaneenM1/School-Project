@@ -8,15 +8,13 @@
 [ext_resource type="Script" uid="uid://dmdx2iykpiep2" path="res://4_seat_table.gd" id="6_d03lc"]
 [ext_resource type="Texture2D" uid="uid://tqc0eua3gqhn" path="res://Scene Concept Practice Chair.png" id="7_skj8c"]
 [ext_resource type="Texture2D" uid="uid://dnmmejpl7r85e" path="res://Godot Icon in Chair.png" id="8_x40jg"]
-[ext_resource type="Script" uid="uid://dv7siq3pht4mq" path="res://t1_chair_1.gd" id="9_rd0vd"]
-[ext_resource type="Script" uid="uid://did7v88c0wh4t" path="res://T1 Chair 2.gd" id="10_h1b6k"]
 [ext_resource type="Script" uid="uid://c7yuobwk8qnkf" path="res://2_seat_table.gd" id="11_k4kxp"]
 [ext_resource type="Script" uid="uid://dax224uj4figt" path="res://6_seat_table.gd" id="12_1s0wa"]
-[ext_resource type="Script" uid="uid://hhfjuvo7tc4o" path="res://t2_chair_1.gd" id="13_if071"]
 [ext_resource type="Script" uid="uid://d3dur2rwnexcj" path="res://t3_chair_1.gd" id="14_pg3gr"]
 [ext_resource type="Script" uid="uid://v2i8popp5lwk" path="res://two_npcs.gd" id="15_uv2ho"]
 [ext_resource type="Texture2D" uid="uid://ctnhetkb1ryof" path="res://Two Godot Icon.png" id="16_4mj3r"]
-[ext_resource type="Script" uid="uid://cp6ro3ni0cxmf" path="res://kitchen_station.gd" id="17_b1a1a"]
+[ext_resource type="PackedScene" uid="uid://b46oyldk155jq" path="res://kitchen_station.tscn" id="17_b1a1a"]
+[ext_resource type="PackedScene" uid="uid://dxjwrvj3lx2ix" path="res://burger.tscn" id="18_pnhgs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryrav"]
 size = Vector2(1157, 128)
@@ -152,6 +150,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnhgs"]
+radius = 214.84674
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iotsf"]
 size = Vector2(225, 80)
 
@@ -161,9 +162,6 @@ size = Vector2(283, 165)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvswv"]
 radius = 100.0
 height = 400.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnhgs"]
-size = Vector2(381, 57)
 
 [node name="Node2D" type="Node2D" unique_id=1368253091]
 position = Vector2(51, 23)
@@ -275,6 +273,13 @@ position = Vector2(1, 0)
 position = Vector2(-2, 1)
 shape = SubResource("CircleShape2D_v0n6i")
 
+[node name="Marker2D" type="Marker2D" parent="Player" unique_id=542470363]
+position = Vector2(-2, -65)
+
+[node name="What table" type="Label" parent="Player" unique_id=1160164667]
+offset_right = 40.0
+offset_bottom = 23.0
+
 [node name="Table 1" type="Area2D" parent="." unique_id=1744585929 groups=["Drop Zones"]]
 script = ExtResource("6_d03lc")
 
@@ -287,7 +292,22 @@ position = Vector2(99.5, 249.5)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
-script = ExtResource("9_rd0vd")
+script = ExtResource("14_pg3gr")
+
+[node name="Prox1" type="Area2D" parent="Table 1/T1 Chair 1" unique_id=983118730]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 1/T1 Chair 1/Prox1" unique_id=1548107]
+shape = SubResource("CircleShape2D_pnhgs")
+
+[node name="Debug" type="Label" parent="Table 1/T1 Chair 1" unique_id=922647854]
+offset_left = -40.740746
+offset_top = -151.85172
+offset_right = -0.74074554
+offset_bottom = -128.85172
+scale = Vector2(3.36, 3.36)
+
+[node name="1" type="Marker2D" parent="Table 1/T1 Chair 1" unique_id=1057058578]
+position = Vector2(162.88293, 26.2844)
 
 [node name="T1 Chair 2" type="AnimatedSprite2D" parent="Table 1" unique_id=947148626]
 position = Vector2(301, 249)
@@ -295,7 +315,22 @@ scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 flip_h = true
-script = ExtResource("10_h1b6k")
+script = ExtResource("14_pg3gr")
+
+[node name="Prox2" type="Area2D" parent="Table 1/T1 Chair 2" unique_id=784263836]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Table 1/T1 Chair 2/Prox2" unique_id=1372227391]
+shape = SubResource("CircleShape2D_pnhgs")
+
+[node name="Debug" type="Label" parent="Table 1/T1 Chair 2" unique_id=1003327874]
+offset_left = -40.740746
+offset_top = -151.85172
+offset_right = -0.74074554
+offset_bottom = -128.85172
+scale = Vector2(3.36, 3.36)
+
+[node name="2" type="Marker2D" parent="Table 1/T1 Chair 2" unique_id=822548434]
+position = Vector2(-187.38736, 24.532106)
 
 [node name="2 Seat Table" type="Area2D" parent="." unique_id=810761712 groups=["Drop Zones"]]
 script = ExtResource("11_k4kxp")
@@ -316,14 +351,44 @@ position = Vector2(765, 268)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
-script = ExtResource("13_if071")
+script = ExtResource("14_pg3gr")
+
+[node name="Prox3" type="Area2D" parent="T2 Chair 1" unique_id=472207755]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T2 Chair 1/Prox3" unique_id=735842892]
+shape = SubResource("CircleShape2D_pnhgs")
+
+[node name="Debug" type="Label" parent="T2 Chair 1" unique_id=1210019964]
+offset_left = -40.740746
+offset_top = -151.85172
+offset_right = -0.74074554
+offset_bottom = -128.85172
+scale = Vector2(3.36, 3.36)
+
+[node name="3" type="Marker2D" parent="T2 Chair 1" unique_id=1516381881]
+position = Vector2(210.4505, 3.5045872)
 
 [node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
 position = Vector2(437, 395.99997)
-scale = Vector2(0.34687498, 0.28534037)
+scale = Vector2(0.27, 0.27)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 script = ExtResource("14_pg3gr")
+
+[node name="Prox4" type="Area2D" parent="T3 Chair 1" unique_id=1966642294]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="T3 Chair 1/Prox4" unique_id=1499950541]
+shape = SubResource("CircleShape2D_pnhgs")
+
+[node name="Debug" type="Label" parent="T3 Chair 1" unique_id=336865183]
+offset_left = -40.740746
+offset_top = -151.85172
+offset_right = -0.74074554
+offset_bottom = -128.85172
+scale = Vector2(3.36, 3.36)
+
+[node name="4" type="Marker2D" parent="T3 Chair 1" unique_id=1092568527]
+position = Vector2(240.74078, 7.407564)
 
 [node name="Two NPCs" type="CharacterBody2D" parent="." unique_id=1635374078]
 position = Vector2(283, 142.99998)
@@ -350,31 +415,41 @@ position = Vector2(-3.846154, 3.846154)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_rvswv")
 
-[node name="KitchenStation" type="Area2D" parent="." unique_id=1667277071]
-script = ExtResource("17_b1a1a")
+[node name="KitchenStation" parent="." unique_id=1844851683 instance=ExtResource("17_b1a1a")]
+position = Vector2(876, 162)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KitchenStation" unique_id=314552318]
-position = Vector2(876, 163)
-shape = SubResource("RectangleShape2D_pnhgs")
-debug_color = Color(0.80983025, 0.18619049, 0.89474416, 0.41960785)
+[node name="FoodPrompt" parent="KitchenStation" index="1" unique_id=1245916177]
+text = "Press E"
 
-[node name="FoodPrompt" type="Label" parent="KitchenStation" unique_id=1600126350]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Food" type="Node" parent="." unique_id=2019515031]
 
-[node name="FoodLabel" type="Label" parent="KitchenStation" unique_id=1162865895]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="Burger" parent="Food" unique_id=891991543 instance=ExtResource("18_pnhgs")]
+position = Vector2(902, 97)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Single_NPC/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="Table 1" to="Table 1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Table 1" to="Table 1" method="_on_mouse_exited"]
+[connection signal="body_entered" from="Table 1/T1 Chair 1/Prox1" to="Player" method="_on_prox_1_body_entered"]
+[connection signal="body_entered" from="Table 1/T1 Chair 1/Prox1" to="Table 1/T1 Chair 1" method="_on_prox_body_entered"]
+[connection signal="body_exited" from="Table 1/T1 Chair 1/Prox1" to="Table 1/T1 Chair 1" method="_on_prox_body_exited"]
+[connection signal="body_entered" from="Table 1/T1 Chair 2/Prox2" to="Player" method="_on_prox_2_body_entered"]
+[connection signal="body_entered" from="Table 1/T1 Chair 2/Prox2" to="Table 1/T1 Chair 2" method="_on_prox_body_entered"]
+[connection signal="body_exited" from="Table 1/T1 Chair 2/Prox2" to="Table 1/T1 Chair 2" method="_on_prox_body_exited"]
 [connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
+[connection signal="body_entered" from="T2 Chair 1/Prox3" to="Player" method="_on_prox_3_body_entered"]
+[connection signal="body_entered" from="T2 Chair 1/Prox3" to="T2 Chair 1" method="_on_prox_body_entered"]
+[connection signal="body_exited" from="T2 Chair 1/Prox3" to="T2 Chair 1" method="_on_prox_body_exited"]
+[connection signal="body_entered" from="T3 Chair 1/Prox4" to="Player" method="_on_prox_4_body_entered"]
+[connection signal="body_entered" from="T3 Chair 1/Prox4" to="T3 Chair 1" method="_on_prox_body_entered"]
+[connection signal="body_exited" from="T3 Chair 1/Prox4" to="T3 Chair 1" method="_on_prox_body_exited"]
 [connection signal="body_entered" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="KitchenStation" to="Player" method="_on_kitchen_station_body_entered"]
 [connection signal="body_exited" from="KitchenStation" to="Player" method="_on_kitchen_station_body_exited"]
+
+[editable path="KitchenStation"]

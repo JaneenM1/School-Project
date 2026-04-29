@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dxjwrvj3lx2ix"]
+
+[ext_resource type="Script" uid="uid://dmqqrb6wy2p5p" path="res://burger.gd" id="1_nkn5y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5n162"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_eu31t"]
+
+[node name="Burger" type="CharacterBody2D" unique_id=891991543]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_nkn5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=610494076]
+shape = SubResource("CircleShape2D_5n162")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1042668319]
+scale = Vector2(10, 10)
+texture = SubResource("PlaceholderTexture2D_eu31t")
+
+[node name="Timer" type="Timer" parent="." unique_id=1609163289]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

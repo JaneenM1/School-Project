@@ -1,43 +1,63 @@
-
 extends CharacterBody2D
+var speed = 700
+var click_pos = Vector2()
+var target_pos = Vector2()
+var hold_pos = Vector2()
+var holding_order:bool
 
-@export var speed: float = 220.0
-var player_in_range := false
-var target_position: Vector2
-var moving := false
+@onready var what_table: Label = $"What table"
+@onready var burger: CharacterBody2D = $"../Food/Burger"
+@onready var marker: Marker2D = $Marker2D
+@onready var kitchen_station: Area2D = $"../KitchenStation"
 
-func _ready():
-	target_position = global_position
+func _physics_process(_delta: float) -> void:
+	hold_pos = marker.global_position
+	#print(var_to_str(at_chair))
+	
+	
+	
+	if Input.is_action_just_pressed("click"):
+		click_pos = get_global_mouse_position()
+	
+	if global_position.distance_to(click_pos) > 6:
+		target_pos = (click_pos - global_position).normalized()
+		velocity = target_pos * speed
+		move_and_slide()
 
-func _unhandled_input(event):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if Global_Var.move_wait == true:
-			Global_Var.move_wait = false
-			return
-		
-		var space_state = get_world_2d().direct_space_state
-		
-		# Cast ray from mouse click
-		var query = PhysicsPointQueryParameters2D.new()
-		query.position = get_global_mouse_position()
-		query.collide_with_areas = true
-		query.collide_with_bodies = true
-		
-		var result = space_state.intersect_point(query)
-		
-		# If clicked on a collider
-		if Global_Var.can_move == true:
-			if result.size() > 0:
-				target_position = get_global_mouse_position()
-				moving = true
 
-func _physics_process(_delta):
-	if moving and Global_Var.grabbed_one == false and Global_Var.grabbed_two == false:
-		var direction = target_position - global_position
-		
-		if direction.length() > 5:
-			velocity = direction.normalized() * speed
-			move_and_slide()
-		else:
-			velocity = Vector2.ZERO
-			moving = false
+func _on_kitchen_station_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		kitchen_station.prompt_label.visible= true
+		burger.Interactable = true
+
+
+func _on_kitchen_station_body_exited(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		kitchen_station.prompt_label.visible= false
+		burger.Interactable = true
+
+
+func _on_prox_1_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		what_table.text = "Chair 1"
+		Global_Var.at_chair = 1
+		if holding_order:
+			burger.global_position = Global_Var.chair_pos
+func _on_prox_2_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		what_table.text = "Chair 2"
+		Global_Var.at_chair = 2
+		if holding_order:
+			burger.global_position = Global_Var.chair_pos
+func _on_prox_3_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		what_table.text = "Chair 3"
+		Global_Var.at_chair = 3
+		if holding_order:
+			burger.global_position = Global_Var.chair_pos
+func _on_prox_4_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		what_table.text = "Chair 4"
+		Global_Var.at_chair = 4
+		if holding_order:
+			burger.global_position = Global_Var.chair_pos

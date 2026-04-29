@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b46oyldk155jq"]
+
+[ext_resource type="Script" uid="uid://cp6ro3ni0cxmf" path="res://kitchen_station.gd" id="1_b7yno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnhgs"]
+size = Vector2(381, 57)
+
+[node name="KitchenStation" type="Area2D" unique_id=1844851683]
+script = ExtResource("1_b7yno")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1605028935]
+shape = SubResource("RectangleShape2D_pnhgs")
+debug_color = Color(0.80983025, 0.18619049, 0.89474416, 0.41960785)
+
+[node name="FoodPrompt" type="Label" parent="." unique_id=1245916177]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="FoodLabel" type="Label" parent="." unique_id=1004155893]
+offset_right = 40.0
+offset_bottom = 23.0
