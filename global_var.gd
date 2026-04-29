@@ -13,3 +13,4 @@ var table3_available : bool = true
 var can_move : bool = false
 var at_chair : int = 0
 var chair_pos = Vector2()
+var holding_order : bool

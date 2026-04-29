@@ -333,61 +333,63 @@ scale = Vector2(3.36, 3.36)
 position = Vector2(-187.38736, 24.532106)
 
 [node name="2 Seat Table" type="Area2D" parent="." unique_id=810761712 groups=["Drop Zones"]]
+visible = false
 script = ExtResource("11_k4kxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2 Seat Table" unique_id=1394164172]
 position = Vector2(851.5, 272)
 shape = SubResource("RectangleShape2D_iotsf")
 
-[node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
-script = ExtResource("12_1s0wa")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
-position = Vector2(553.5, 454.5)
-shape = SubResource("RectangleShape2D_215e1")
-
-[node name="T2 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1421199891]
+[node name="T2 Chair 1" type="AnimatedSprite2D" parent="2 Seat Table" unique_id=1421199891]
 position = Vector2(765, 268)
 scale = Vector2(0.34687498, 0.28534037)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 script = ExtResource("14_pg3gr")
 
-[node name="Prox3" type="Area2D" parent="T2 Chair 1" unique_id=472207755]
+[node name="Prox3" type="Area2D" parent="2 Seat Table/T2 Chair 1" unique_id=472207755]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="T2 Chair 1/Prox3" unique_id=735842892]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2 Seat Table/T2 Chair 1/Prox3" unique_id=735842892]
 shape = SubResource("CircleShape2D_pnhgs")
 
-[node name="Debug" type="Label" parent="T2 Chair 1" unique_id=1210019964]
+[node name="Debug" type="Label" parent="2 Seat Table/T2 Chair 1" unique_id=1210019964]
 offset_left = -40.740746
 offset_top = -151.85172
 offset_right = -0.74074554
 offset_bottom = -128.85172
 scale = Vector2(3.36, 3.36)
 
-[node name="3" type="Marker2D" parent="T2 Chair 1" unique_id=1516381881]
+[node name="3" type="Marker2D" parent="2 Seat Table/T2 Chair 1" unique_id=1516381881]
 position = Vector2(210.4505, 3.5045872)
 
-[node name="T3 Chair 1" type="AnimatedSprite2D" parent="." unique_id=1233112606]
+[node name="6 Seat Table" type="Area2D" parent="." unique_id=1258664161 groups=["Drop Zones"]]
+visible = false
+script = ExtResource("12_1s0wa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table" unique_id=99130924]
+position = Vector2(553.5, 454.5)
+shape = SubResource("RectangleShape2D_215e1")
+
+[node name="T3 Chair 1" type="AnimatedSprite2D" parent="6 Seat Table" unique_id=1233112606]
 position = Vector2(437, 395.99997)
 scale = Vector2(0.27, 0.27)
 sprite_frames = SubResource("SpriteFrames_215e1")
 animation = &"seated npc"
 script = ExtResource("14_pg3gr")
 
-[node name="Prox4" type="Area2D" parent="T3 Chair 1" unique_id=1966642294]
+[node name="Prox4" type="Area2D" parent="6 Seat Table/T3 Chair 1" unique_id=1966642294]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="T3 Chair 1/Prox4" unique_id=1499950541]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="6 Seat Table/T3 Chair 1/Prox4" unique_id=1499950541]
 shape = SubResource("CircleShape2D_pnhgs")
 
-[node name="Debug" type="Label" parent="T3 Chair 1" unique_id=336865183]
+[node name="Debug" type="Label" parent="6 Seat Table/T3 Chair 1" unique_id=336865183]
 offset_left = -40.740746
 offset_top = -151.85172
 offset_right = -0.74074554
 offset_bottom = -128.85172
 scale = Vector2(3.36, 3.36)
 
-[node name="4" type="Marker2D" parent="T3 Chair 1" unique_id=1092568527]
+[node name="4" type="Marker2D" parent="6 Seat Table/T3 Chair 1" unique_id=1092568527]
 position = Vector2(240.74078, 7.407564)
 
 [node name="Two NPCs" type="CharacterBody2D" parent="." unique_id=1635374078]
@@ -439,14 +441,14 @@ scale = Vector2(2, 2)
 [connection signal="body_exited" from="Table 1/T1 Chair 2/Prox2" to="Table 1/T1 Chair 2" method="_on_prox_body_exited"]
 [connection signal="mouse_entered" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="2 Seat Table" to="2 Seat Table" method="_on_mouse_exited"]
+[connection signal="body_entered" from="2 Seat Table/T2 Chair 1/Prox3" to="Player" method="_on_prox_3_body_entered"]
+[connection signal="body_entered" from="2 Seat Table/T2 Chair 1/Prox3" to="2 Seat Table/T2 Chair 1" method="_on_prox_body_entered"]
+[connection signal="body_exited" from="2 Seat Table/T2 Chair 1/Prox3" to="2 Seat Table/T2 Chair 1" method="_on_prox_body_exited"]
 [connection signal="mouse_entered" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="6 Seat Table" to="6 Seat Table" method="_on_mouse_exited"]
-[connection signal="body_entered" from="T2 Chair 1/Prox3" to="Player" method="_on_prox_3_body_entered"]
-[connection signal="body_entered" from="T2 Chair 1/Prox3" to="T2 Chair 1" method="_on_prox_body_entered"]
-[connection signal="body_exited" from="T2 Chair 1/Prox3" to="T2 Chair 1" method="_on_prox_body_exited"]
-[connection signal="body_entered" from="T3 Chair 1/Prox4" to="Player" method="_on_prox_4_body_entered"]
-[connection signal="body_entered" from="T3 Chair 1/Prox4" to="T3 Chair 1" method="_on_prox_body_entered"]
-[connection signal="body_exited" from="T3 Chair 1/Prox4" to="T3 Chair 1" method="_on_prox_body_exited"]
+[connection signal="body_entered" from="6 Seat Table/T3 Chair 1/Prox4" to="Player" method="_on_prox_4_body_entered"]
+[connection signal="body_entered" from="6 Seat Table/T3 Chair 1/Prox4" to="6 Seat Table/T3 Chair 1" method="_on_prox_body_entered"]
+[connection signal="body_exited" from="6 Seat Table/T3 Chair 1/Prox4" to="6 Seat Table/T3 Chair 1" method="_on_prox_body_exited"]
 [connection signal="body_entered" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Two NPCs/Area2D" to="Single_NPC" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="KitchenStation" to="Player" method="_on_kitchen_station_body_entered"]

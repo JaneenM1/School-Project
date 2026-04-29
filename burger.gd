@@ -14,22 +14,21 @@ func _physics_process(_delta: float) -> void:
 		target_pos = new_target_pos
 	
 	if Interactable:
-		move_and_slide()
+		Global_Var.holding_order = true
 		new_target_pos = player.hold_pos
 		if global_position.distance_to(target_pos) > 6:
 			target_pos = (new_target_pos - global_position).normalized()
 			velocity = target_pos * speed
 		
 	if Drop:
-		
+		Interactable = false
+		global_position = Global_Var.chair_pos
 		timer.start()
-		speed = 0
 		
 			
 			
 			
-			
-
+	move_and_slide()
 
 func _on_timer_timeout() -> void:
 	queue_free()
